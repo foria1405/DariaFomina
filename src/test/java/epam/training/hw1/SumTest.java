@@ -1,4 +1,5 @@
-package hw1;
+package epam.training.hw1;
+
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -10,7 +11,7 @@ public class SumTest {
     static Calculator calculator = new Calculator();
 
     @DataProvider
-    public static Object[][] doubleSumDataProvider(){
+    public static Object[][] doubleSumDataProvider() {
         return new Object[][]{
                 {4.2, 0.9},
                 {7.003, 3.007},
@@ -23,7 +24,7 @@ public class SumTest {
     }
 
     @DataProvider
-    public static Object[][] longSumDataProvider(){
+    public static Object[][] longSumDataProvider() {
         return new Object[][]{
                 {2L, 4L},
                 {1001L, 0L},
@@ -36,14 +37,14 @@ public class SumTest {
 
     @Test(testName = "sumDoubleTest",
             dataProvider = "doubleSumDataProvider")
-    public void sumDoubleTest(double a, double b){
-        Assert.assertEquals(calculator.sum(a, b), a+b);
+    public void sumDoubleTest(double a, double b) {
+        Assert.assertEquals(calculator.sum(a, b), a + b);
     }
 
     @Test(testName = "sumLongTest",
             dataProvider = "longSumDataProvider")
-    public void sumLongTest(long a, long b){
-        Assert.assertEquals(calculator.sum(a, b), a+b);
+    public void sumLongTest(long a, long b) {
+        Assert.assertEquals(calculator.sum(a, b), a + b);
     }
 
 }

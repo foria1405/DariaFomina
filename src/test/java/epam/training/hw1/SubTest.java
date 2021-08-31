@@ -1,4 +1,4 @@
-package hw1;
+package epam.training.hw1;
 
 
 import com.epam.tat.module4.Calculator;

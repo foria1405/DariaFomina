@@ -1,9 +1,10 @@
+
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SuiteSinCos">
     <test name="TestSinCos">
         <classes>
-            <class name="hw1.SinTest" />
-            <class name="hw1.CosTest"/>
+            <class name="epam.training.hw1.SinTest" />
+            <class name="epam.training.hw1.CosTest"/>
         </classes>
     </test>
 </suite>

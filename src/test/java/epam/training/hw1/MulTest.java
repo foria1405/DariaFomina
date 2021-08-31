@@ -1,4 +1,4 @@
-package hw1;
+package epam.training.hw1;
 
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
@@ -49,13 +49,13 @@ public class MulTest {
 
     @Test(testName = "mulDoubleTest",
             dataProvider = "doubleMulDataProvider")
-    public void mulDoubleTest(double a, double b){
-        Assert.assertEquals(calculator.mult(a, b), a*b);
+    public void mulDoubleTest(double a, double b) {
+        Assert.assertEquals(calculator.mult(a, b), a * b);
     }
 
     @Test(testName = "mulLongTest",
             dataProvider = "longMulDataProvider")
-    public void mulLongTest(long a, long b){
-        Assert.assertEquals(calculator.mult(a, b), a*b);
+    public void mulLongTest(long a, long b) {
+        Assert.assertEquals(calculator.mult(a, b), a * b);
     }
 }

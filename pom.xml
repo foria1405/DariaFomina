@@ -8,14 +8,12 @@
     <artifactId>hw1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <assertj-core.version>3.20.2</assertj-core.version>
+        <testng.suite.path>${project.basedir}/src/test/resources/suits</testng.suite.path>
     </properties>
-
-    <url>http://maven.apache.org</url>
 
     <repositories>
         <repository>
@@ -24,7 +22,6 @@
             <url>file:${project.basedir}/local-maven-repo</url>
         </repository>
     </repositories>
-
 
     <dependencies>
         <dependency>
@@ -38,83 +35,59 @@
             <artifactId>calculator</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
-            <id>test-SumSub</id>
+            <id>AllTests</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/AllTestCalculatorHW1.xml</testng.suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>SumSub</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>SumSubTest.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>test-MulDiv</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>MulDivTest.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/SumSubTest.xml</testng.suite.file>
+            </properties>
         </profile>
 
         <profile>
-            <id>test-SinCos</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>SinCosTest.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>SinCos</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/SinCosTest.xml</testng.suite.file>
+            </properties>
         </profile>
+
         <profile>
-            <id>test-Complex</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>SumSubTest.xml</suiteXmlFile>
-                                <suiteXmlFile>MulDivTest.xml</suiteXmlFile>
-                                <suiteXmlFile>SinCosTest.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>MulDiv</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/MulDivTest.xml</testng.suite.file>
+            </properties>
         </profile>
     </profiles>
-
 </project>

@@ -1,18 +1,17 @@
-package hw1;
+package epam.training.hw1;
 
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-//10 out of 10 tests has failed. Method public double cos(double a) in library Calculator returns Math.sin (a).
-// In this way, all tests has failed.
+//10 out 10 tests has passed
 
-public class CosTest {
+public class SinTest {
     static Calculator calculator = new Calculator();
 
     @DataProvider
-    public static Object[][] doubleCosDataProvider() {
+    public static Object[][] doubleSinDataProvider() {
         return new Object[][]{
                 {0.0},
                 {1.0},
@@ -26,10 +25,10 @@ public class CosTest {
                 {Double.MIN_VALUE}
         };
     }
-    @Test(testName = "cosTestDouble",
-            dataProvider = "doubleCosDataProvider")
-    public void cosTestDouble(double alpha){
-        Assert.assertEquals(calculator.cos(alpha), Math.cos(alpha));
-    }
 
+    @Test(testName = "sinTestDouble",
+            dataProvider = "doubleSinDataProvider")
+    public void sinTestDouble(double alpha) {
+        Assert.assertEquals(calculator.sin(alpha), Math.sin(alpha));
+    }
 }
