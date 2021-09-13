@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 @FindBy(css = "ul.sidebar-menu")
 public class NavigationBar extends AbstractComponent {
+
     @FindBy(css = "ul.sidebar-menu>li")
     private List<WebElement> navigationBar;
 

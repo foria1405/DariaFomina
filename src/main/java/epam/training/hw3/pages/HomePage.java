@@ -1,6 +1,7 @@
 package epam.training.hw3.pages;
 
-import epam.training.hw3.components.*;
+import epam.training.hw3.components.Benefit;
+import epam.training.hw3.components.Frame;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends AbstractPage {

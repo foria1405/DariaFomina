@@ -4,14 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataClass {
-    public static final String HOME_PAGE_TITLE = "Home Page";
-
-    public static final String EXPECTED_USER_NAME = "ROMAN IOVLEV";
-
-    public static final List<String> TOOLBAR_TEXT = new ArrayList<>(
-            List.of("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"));
-
-    public static final int BENEFIT_INDEX_PAGE_IMAGES_SIZE = 4;
 
     public static final List<String> BENEFIT_INDEX_PAGE_TEXT = new ArrayList<>(
             List.of(
@@ -32,18 +24,18 @@ public class DataClass {
                             +
                             "wish to get more…"));
 
-    public static final List<String> NAVIGATIONBAR_TEXT = new ArrayList<>(
-            List.of("Home", "Contact form", "Service", "Metals & Colors", "Elements packs"));
 
     public static final List<String> CHECKBOX_TEXT = new ArrayList<>(
             List.of("Water", "Earth",  "Wind", "Fire"));
 
     public static final String CHECKBOX_LOG = ": condition changed to true";
 
+
     public static final List<String> RADIO_TEXT = new ArrayList<>(
             List.of("Gold", "Silver",  "Bronze", "Selen"));
 
     public static final String RADIO_LOG = "metal: value changed to";
+
 
     public static final List<String> DROPDOWN_TEXT = new ArrayList<>(
             List.of("Red", "Green",  "Blue", "Yellow"));

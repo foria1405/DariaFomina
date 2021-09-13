@@ -1,13 +1,22 @@
 package epam.training.hw3.ex1;
 
-import static epam.training.hw3.DataClass.*;
+
+import static epam.training.hw3.DataClass.BENEFIT_INDEX_PAGE_TEXT;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import epam.training.hw3.BaseTestClass;
 import epam.training.hw3.components.Frame;
 import epam.training.hw3.pages.HomePage;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+
 public class ElementExistTest extends BaseTestClass {
+
+    @AfterTest
+    void tearDown() {
+        softAssertions.assertAll();
+    }
 
     @Test
     public void checkElementsTest() {
@@ -15,10 +24,8 @@ public class ElementExistTest extends BaseTestClass {
         HomePage homePage = new HomePage(webDriver, properties.getString("baseURL"));
 
         //2. Assert Browser title
-        homePage.getTitle();
-        softAssertions
-                .assertThat(homePage.getTitle())
-                .isEqualTo(HOME_PAGE_TITLE);
+        assertThat(homePage.getTitle())
+                .isEqualTo(properties.getString("title"));
 
         //3. Perform login
         homePage.getHeader().signIn(
@@ -26,26 +33,20 @@ public class ElementExistTest extends BaseTestClass {
                 properties.getString("password"));
 
         //4. Assert Username is loggined
-        softAssertions
-                .assertThat(homePage.getHeader().isNameDisplayed())
-                .isTrue();
-        softAssertions
-                .assertThat(homePage.getHeader().getName())
-                .isEqualTo(EXPECTED_USER_NAME);
+        assertThat(homePage.getHeader().isNameDisplayed());
+
+        assertThat(homePage.getHeader().getName())
+                .isEqualTo(properties.getString("name"));
 
         //5. Assert that there are 4 items on the header section are displayed and they have proper texts
-        softAssertions
-                .assertThat(homePage.getHeader().getHeaderElementsText())
-                .hasSize(TOOLBAR_TEXT.size());
+        assertThat(homePage.getHeader().getHeaderElementsText())
+                .hasSize(properties.getInt("toolbar.size"))
+                .isEqualTo(properties.getList("toolbar"));
 
-        softAssertions
-                .assertThat(homePage.getHeader().getHeaderElementsText())
-                .isEqualTo(TOOLBAR_TEXT);
 
         //6. Assert that there are 4 images on the Index Page and they are displayed
-        softAssertions
-                .assertThat(homePage.getBenefit().getBenefitIconsNumber())
-                .isEqualTo(BENEFIT_INDEX_PAGE_IMAGES_SIZE);
+        assertThat(homePage.getBenefit().getBenefitIconsNumber())
+                .isEqualTo(properties.getInt("images.size"));
 
         homePage.getBenefit().getBenefitIcons()
                 .forEach(element ->
@@ -54,40 +55,36 @@ public class ElementExistTest extends BaseTestClass {
                                 .isTrue());
 
         //7. Assert that there are 4 texts on the Index Page under icons and they have proper text
-        softAssertions
-                .assertThat(homePage.getBenefit().getBenefitTextsNumber())
-                .isEqualTo(BENEFIT_INDEX_PAGE_TEXT.size());
+        assertThat(homePage.getBenefit().getBenefitTextsNumber())
+                .isEqualTo(properties.getInt("text.size"));
 
         softAssertions
                 .assertThat(homePage.getBenefit().getBenefitTextsExtracted())
                 .isEqualTo(BENEFIT_INDEX_PAGE_TEXT);
 
+
         //8. Assert that there is the iframe with “Frame Button” exist
-        softAssertions
-                .assertThat(homePage.getFrame().getFrame())
+        assertThat(homePage.getFrame().getFrame())
                 .isNotNull();
 
-        softAssertions
-                .assertThat(homePage.getFrame().isFrameDisplayed())
+        assertThat(homePage.getFrame().isFrameDisplayed())
                 .isTrue();
 
         //9. Switch to the iframe and check that there is “Frame Button” in the iframe
         Frame frame = homePage.switchToFrame();
-        softAssertions
-                .assertThat(frame.getFrameButton())
+
+        assertThat(frame.getFrameButton())
                 .isNotNull();
 
-        softAssertions
-                .assertThat(frame.isFrameButtonDisplayed())
+        assertThat(frame.isFrameButtonDisplayed())
                 .isTrue();
 
         //10. Switch to original window back
         homePage = (HomePage) frame.switchToDefault();
 
         //11. Assert that there are 5 items in the Left Section are displayed and they have proper text
-        softAssertions
-                .assertThat(homePage.getNavigationBar().getNavigationBarNumber())
-                .isEqualTo(NAVIGATIONBAR_TEXT.size());
+        assertThat(homePage.getNavigationBar().getNavigationBarNumber())
+                .isEqualTo(properties.getInt("text.left.size"));
 
         homePage.getNavigationBar().getNavigationBar()
                 .forEach(element ->
@@ -96,9 +93,7 @@ public class ElementExistTest extends BaseTestClass {
                                 .isTrue());
         softAssertions
                 .assertThat(homePage.getNavigationBar().getNavigationBarExtracted())
-                .isEqualTo(NAVIGATIONBAR_TEXT);
+                .isEqualTo(properties.getList("text.left"));
 
-        //AssertAll
-        softAssertions.assertAll();
     }
 }
