@@ -1,0 +1,10 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteMulDiv">
+    <test name="TestMulDiv">
+        <classes>
+            <class name="epam.training.hw1.MulTest" />
+            <class name="epam.training.hw1.DivTest"/>
+        </classes>
+    </test>
+</suite>
