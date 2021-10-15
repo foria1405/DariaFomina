@@ -11,11 +11,11 @@ import org.testng.annotations.Test;
 
 
 @Listeners({ScreenshotListener.class })
-@Story("User should see all header section items, benefits, \"Button\" iframe and navigation items")
+@Story("Show that screen shot listener is working so there are screenshots while faile")
 @Feature("Home Page contains header section items, benefits, \"Button\" iframe and navigation items")
 public class ElementExistTestWithFail extends BaseTestClass {
 
-    @Test(description = "Test the test with fail")
+    @Test(description = "Test screenshot listener")
     public void checkElementsTest() {
         //1. Open test site by URL
         actionStep.openHomePage(properties.getString("baseURL"));
