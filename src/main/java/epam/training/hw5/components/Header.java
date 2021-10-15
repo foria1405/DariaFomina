@@ -1,4 +1,4 @@
-package epam.training.hw5.pageComponents;
+package epam.training.hw5.components;
 
 import epam.training.hw5.pages.DifferentElementsPage;
 import org.openqa.selenium.By;

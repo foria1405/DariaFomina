@@ -1,7 +1,7 @@
 package epam.training.hw4.pages;
 
-import epam.training.hw4.pageComponents.Header;
-import epam.training.hw4.pageComponents.NavigationBar;
+import epam.training.hw4.components.Header;
+import epam.training.hw4.components.NavigationBar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

@@ -1,4 +1,4 @@
-package epam.training.hw4.pageComponents;
+package epam.training.hw4.components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

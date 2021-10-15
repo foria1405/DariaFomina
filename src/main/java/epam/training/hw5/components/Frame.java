@@ -1,4 +1,4 @@
-package epam.training.hw5.pageComponents;
+package epam.training.hw5.components;
 
 import epam.training.hw5.pages.HomePage;
 import org.openqa.selenium.WebElement;

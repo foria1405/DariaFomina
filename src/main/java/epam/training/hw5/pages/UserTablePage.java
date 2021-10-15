@@ -1,7 +1,7 @@
 package epam.training.hw5.pages;
 
-import epam.training.hw5.pageComponents.LogPanel;
-import epam.training.hw5.pageComponents.UserTable;
+import epam.training.hw5.components.LogPanel;
+import epam.training.hw5.components.UserTable;
 import org.openqa.selenium.WebDriver;
 
 public class UserTablePage extends AbstractPage {

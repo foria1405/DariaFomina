@@ -1,7 +1,7 @@
 package epam.training.hw4.pages;
 
-import epam.training.hw4.pageComponents.Benefit;
-import epam.training.hw4.pageComponents.Frame;
+import epam.training.hw4.components.Benefit;
+import epam.training.hw4.components.Frame;
 import org.openqa.selenium.WebDriver;
 
 
@@ -26,8 +26,8 @@ public class HomePage extends AbstractPage {
         return new Frame(this);
     }
 
-    public HomePage open(String URL) {
-        webDriver.get(URL);
+    public HomePage open(String url) {
+        webDriver.get(url);
         return this;
     }
 }

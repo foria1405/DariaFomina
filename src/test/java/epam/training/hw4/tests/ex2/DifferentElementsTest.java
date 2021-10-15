@@ -1,6 +1,11 @@
 package epam.training.hw4.tests.ex2;
 
-import static epam.training.hw4.DataClass.*;
+import static epam.training.hw4.DataClass.CHECKBOX_LOG;
+import static epam.training.hw4.DataClass.CHECKBOX_TEXT;
+import static epam.training.hw4.DataClass.DROPDOWN_LOG;
+import static epam.training.hw4.DataClass.DROPDOWN_TEXT;
+import static epam.training.hw4.DataClass.RADIO_LOG;
+import static epam.training.hw4.DataClass.RADIO_TEXT;
 
 import epam.training.hw4.listeners.ScreenshotListener;
 import epam.training.hw4.tests.BaseTestClass;

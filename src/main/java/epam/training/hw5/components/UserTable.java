@@ -1,4 +1,4 @@
-package epam.training.hw5.pageComponents;
+package epam.training.hw5.components;
 
 import java.util.ArrayList;
 import java.util.List;

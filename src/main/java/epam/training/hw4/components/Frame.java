@@ -1,4 +1,4 @@
-package epam.training.hw4.pageComponents;
+package epam.training.hw4.components;
 
 
 import epam.training.hw4.pages.AbstractPage;
