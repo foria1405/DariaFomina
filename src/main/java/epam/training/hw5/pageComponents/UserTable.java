@@ -9,11 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.Select;
 
 
-@SuppressWarnings("checkstyle:WhitespaceAround")
 @FindBy(css = "table#user-table")
 public class UserTable extends AbstractComponent {
-    @FindBy(css = "tbody tr")
-    private List<WebElement> tableLine;
 
     @FindBy(xpath = "//tr/td[1]")
     private List<WebElement> numberTypeDropdowns;

@@ -12,19 +12,12 @@ public class Frame extends AbstractComponent {
     @FindBy(id = "frame-button")
     private WebElement frameButton;
 
-    private final HomePage parent;
-
     public Frame(HomePage parent) {
         super(parent.webDriver);
-        this.parent = parent;
     }
 
     public WebElement getFrame() {
         return frame;
-    }
-
-    public WebElement getFrameButton() {
-        return frameButton;
     }
 
     public boolean isFrameButtonDisplayed() {
@@ -33,11 +26,6 @@ public class Frame extends AbstractComponent {
 
     public boolean isFrameDisplayed() {
         return frame.isDisplayed();
-    }
-
-    public HomePage switchToDefault() {
-        parent.webDriver.switchTo().parentFrame();
-        return parent;
     }
 
 }

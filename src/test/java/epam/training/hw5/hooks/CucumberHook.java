@@ -11,14 +11,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CucumberHook {
 
-    private final String pathToProperties = "src/test/resources/properties/pageProperties.properties";
-    private WebDriver webDriver;
-
     @Before
     public void downloadAndSetUpWebDriver() throws ConfigurationException {
         WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
+        WebDriver webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
+        String pathToProperties = "src/test/resources/properties/pageProperties.properties";
         TestContext.getInstance()
                 .putObject("webDriver", webDriver)
                 .putObject("properties", new PropertiesConfiguration(pathToProperties));

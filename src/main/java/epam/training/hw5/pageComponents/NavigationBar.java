@@ -16,18 +16,10 @@ public class NavigationBar extends AbstractComponent {
         super(webDriver);
     }
 
-    public List<WebElement> getNavigationBar() {
-        return navigationBar;
-    }
-
     public List<String> getNavigationBarExtracted() {
         return navigationBar
                 .stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
-    }
-
-    public int getNavigationBarNumber() {
-        return navigationBar.size();
     }
 }

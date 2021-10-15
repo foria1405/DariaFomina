@@ -20,11 +20,6 @@ public class HomePage extends AbstractPage {
         return frame;
     }
 
-    public Frame switchToFrame() {
-        webDriver.switchTo().frame(frame.getFrame());
-        return new Frame(this);
-    }
-
     public HomePage open(String URL) {
         webDriver.get(URL);
         return this;
