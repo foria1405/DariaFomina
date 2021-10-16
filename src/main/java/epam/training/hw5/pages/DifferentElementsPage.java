@@ -1,7 +1,7 @@
-package epam.training.hw4.pages;
+package epam.training.hw5.pages;
 
-import epam.training.hw4.components.DifferentElements;
-import epam.training.hw4.components.LogPanel;
+import epam.training.hw5.components.DifferentElements;
+import epam.training.hw5.components.LogPanel;
 import org.openqa.selenium.WebDriver;
 
 public class DifferentElementsPage extends AbstractPage {

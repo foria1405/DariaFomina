@@ -13,9 +13,9 @@ public class ActionStep extends AbstractStep {
         super(webDriver);
     }
 
-    @Step("Open test site by URL {URL}")
-    public void openHomePage(String URL) {
-        homePage.open(URL);
+    @Step("Open test site by url {url}")
+    public void openHomePage(String url) {
+        homePage.open(url);
     }
 
     @Step("Perform login: {login}; password : {password}")

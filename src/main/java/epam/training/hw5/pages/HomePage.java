@@ -1,9 +1,8 @@
-package epam.training.hw4.pages;
+package epam.training.hw5.pages;
 
-import epam.training.hw4.components.Benefit;
-import epam.training.hw4.components.Frame;
+import epam.training.hw5.components.Benefit;
+import epam.training.hw5.components.Frame;
 import org.openqa.selenium.WebDriver;
-
 
 public class HomePage extends AbstractPage {
     private final Benefit benefit = new Benefit(webDriver);
@@ -19,11 +18,6 @@ public class HomePage extends AbstractPage {
 
     public Frame getFrame() {
         return frame;
-    }
-
-    public Frame switchToFrame() {
-        webDriver.switchTo().frame(frame.getFrame());
-        return new Frame(this);
     }
 
     public HomePage open(String url) {

@@ -1,7 +1,6 @@
-package epam.training.hw4.pageComponents;
+package epam.training.hw5.components;
 
-
-import epam.training.hw4.pages.AbstractPage;
+import epam.training.hw5.pages.HomePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,19 +12,12 @@ public class Frame extends AbstractComponent {
     @FindBy(id = "frame-button")
     private WebElement frameButton;
 
-    private final AbstractPage parent;
-
-    public Frame(AbstractPage parent) {
+    public Frame(HomePage parent) {
         super(parent.webDriver);
-        this.parent = parent;
     }
 
     public WebElement getFrame() {
         return frame;
-    }
-
-    public WebElement getFrameButton() {
-        return frameButton;
     }
 
     public boolean isFrameButtonDisplayed() {
@@ -34,11 +26,6 @@ public class Frame extends AbstractComponent {
 
     public boolean isFrameDisplayed() {
         return frame.isDisplayed();
-    }
-
-    public AbstractPage switchToDefault() {
-        parent.webDriver.switchTo().parentFrame();
-        return parent;
     }
 
 }

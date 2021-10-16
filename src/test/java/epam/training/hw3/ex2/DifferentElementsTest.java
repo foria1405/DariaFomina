@@ -1,6 +1,11 @@
 package epam.training.hw3.ex2;
 
-import static epam.training.hw3.DataClass.*;
+import static epam.training.hw3.DataClass.CHECKBOX_LOG;
+import static epam.training.hw3.DataClass.CHECKBOX_TEXT;
+import static epam.training.hw3.DataClass.DROPDOWN_LOG;
+import static epam.training.hw3.DataClass.DROPDOWN_TEXT;
+import static epam.training.hw3.DataClass.RADIO_LOG;
+import static epam.training.hw3.DataClass.RADIO_TEXT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import epam.training.hw3.BaseTestClass;

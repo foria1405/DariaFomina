@@ -1,4 +1,4 @@
-package epam.training.hw4.pageComponents;
+package epam.training.hw4.components;
 
 import java.util.List;
 import java.util.stream.Collectors;

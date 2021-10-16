@@ -1,6 +1,8 @@
 package epam.training.hw4.tests.ex1;
 
-import static epam.training.hw4.DataClass.*;
+import static epam.training.hw4.DataClass.BENEFIT_INDEX_PAGE_TEXT;
+import static epam.training.hw4.DataClass.NAVIGATIONBAR_TEXT;
+import static epam.training.hw4.DataClass.TOOLBAR_TEXT;
 
 import epam.training.hw4.listeners.ScreenshotListener;
 import epam.training.hw4.tests.BaseTestClass;

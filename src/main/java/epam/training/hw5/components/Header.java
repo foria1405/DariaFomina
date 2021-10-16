@@ -1,8 +1,7 @@
-package epam.training.hw4.pageComponents;
+package epam.training.hw5.components;
 
-import epam.training.hw4.pages.DifferentElementsPage;
-import java.util.List;
-import java.util.stream.Collectors;
+import epam.training.hw5.pages.DifferentElementsPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,8 +24,8 @@ public class Header extends AbstractComponent {
     @FindBy(id = "user-name")
     private WebElement userName;
 
-    @FindBy(css = "ul.nav>li")
-    private List<WebElement> headerElements;
+    @FindBy(css = "ul.nav")
+    private WebElement headerElements;
 
     @FindBy(css = "a.dropdown-toggle")
     private  WebElement service;
@@ -69,11 +68,12 @@ public class Header extends AbstractComponent {
         return this;
     }
 
-    public List<String> getHeaderElementsText() {
-        return headerElements
-                .stream()
-                .map(WebElement::getText)
-                .collect(Collectors.toList());
+    public WebElement getHeaderElement(String buttonName) {
+        return  headerElements.findElement(By.xpath("./li/a[contains(text(), \"" + buttonName + "\")]"));
+    }
+
+    public WebElement getServiceElement(String buttonName) {
+        return getHeaderElement("Service").findElement(By.xpath("//a[contains(text(), \"" + buttonName + "\")]"));
     }
 
     public DifferentElementsPage clickDifferentElement() {
@@ -82,3 +82,4 @@ public class Header extends AbstractComponent {
         return new DifferentElementsPage(webDriver);
     }
 }
+
