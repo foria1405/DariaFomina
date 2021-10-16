@@ -12,11 +12,11 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners({ScreenshotListener.class})
-@Story("User should see all header section items, benefits, \"Button\" iframe and navigation items")
+@Story("User can see main items on Home Page and logged in")
 @Feature("Home Page contains header section items, benefits, \"Button\" iframe and navigation items")
 public class ElementExistTest extends BaseTestClass {
 
-    @Test(description = "Test proper elements on Home Page")
+    @Test(description = "Test proper place and visibility main items on Home Page while logged")
     public void checkElementsTest() {
         //1. Open test site by URL
         actionStep.openHomePage(properties.getString("baseURL"));

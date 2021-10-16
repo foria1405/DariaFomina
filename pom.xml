@@ -207,9 +207,7 @@
                 <testng.suite.file>${testng.suite.path}/AllTestsSeleniumHW5.xml</testng.suite.file>
             </properties>
         </profile>
-
     </profiles>
-
 
     <reporting>
         <excludeDefaults>true</excludeDefaults>

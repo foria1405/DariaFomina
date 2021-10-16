@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 @Feature("Elements are clickable and logs panel shows user action")
 public class DifferentElementsTest extends BaseTestClass {
 
-    @Test(description = "Test clickable elements and logs of them")
+    @Test(description = "Test checkboxes, radio buttons, dropdown and logs of them while logged")
     public void checkDifferentElementsTest() {
         //1. Open test site by URL
         actionStep.openHomePage(properties.getString("baseURL"));
